@@ -20,7 +20,7 @@ var spotApp = new Vue (
       valueChange: function (){
         console.log(this.selected);
         this.conditionAlbum = false
-        console.log( "here", this.selected);
+        // console.log( "here", this.selected);
 
       },
     },
@@ -34,7 +34,7 @@ var spotApp = new Vue (
         .get('https://flynn.boolean.careers/exercises/api/array/music')
           .then((result) => {
             // console.log(result);
-            console.log(this.albumArray);
+            
             for (var i = 0; i < result.data.response.length; i++) {
               if (!this.genreArray.includes(result.data.response[i].genre)) {
                 this.genreArray.push(result.data.response[i].genre)
