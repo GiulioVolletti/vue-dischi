@@ -13,11 +13,14 @@ var spotApp = new Vue (
       // Utilizzando vue, stampiamo a schermo una card per ogni album.
       albumArray: [],
       genreArray: [],
-      selectedGenre: " ",
+      selected: "" ,
     },
     methods:{
       valueChange: function (){
-        console.log( "here");
+        console.log(this.selected);
+
+        console.log( "here", this.selected);
+
       },
     },
     mounted: function ()  {

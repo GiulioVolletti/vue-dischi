@@ -16,16 +16,16 @@
         <img src="https://www.scdn.co/i/_global/twitter_card-default.jpg" alt="spotify">
 
 
-        <select @change="valueChange"  v-model="selectedGenre" class="" name="">
+        <select @change="valueChange"  v-model="selected" class="" name="">
           <option value="">Scegli il genere</option>
-          <option v-for="genre in genreArray" value="">{{ genre }}</option>
+          <option v-for="genre in genreArray" >{{ genre }}</option>
 
         </select>
 
       </header>
       <main class="app_container">
-        <div class="container">
-          <div v-if="albumArray.length != 0" v-for="album in albumArray" class="albums">
+        <div v-if="albumArray.length != 0" class="container">
+          <div v-if="album.genre  == selected" v-for="album in albumArray" class="albums">
             <img :src="album.poster" alt="">
             <h4>{{album.title}}</h4>
             <p>{{album.author}}</p>
