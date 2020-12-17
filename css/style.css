@@ -18,7 +18,7 @@ header > img {
 }
 
 .app_container {
-  height: 100%;
+  min-height: 100vh;
   background-color: #202C3C;
 }
 .container{
