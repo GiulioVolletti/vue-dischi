@@ -11,21 +11,29 @@
     <title>Vue Dischi</title>
   </head>
   <body>
-    <header>
-      <img src="https://www.scdn.co/i/_global/twitter_card-default.jpg" alt="spotify">
-      
+    <div id="wrapper">
+      <header>
+        <img src="https://www.scdn.co/i/_global/twitter_card-default.jpg" alt="spotify">
 
-    </header>
-    <main class="app_container">
-      <div class="container">
-        <div v-if="albumArray.length != 0" v-for="album in albumArray" class="albums">
-          <img :src="album.poster" alt="">
-          <h4>{{album.title}}</h4>
-          <p>{{album.author}}</p>
-          <p>{{album.year}}</p>
+
+        <select @change="valueChange"  v-model="selectedGenre" class="" name="">
+          <option value="">Scegli il genere</option>
+          <option v-for="genre in genreArray" value="">{{ genre }}</option>
+
+        </select>
+
+      </header>
+      <main class="app_container">
+        <div class="container">
+          <div v-if="albumArray.length != 0" v-for="album in albumArray" class="albums">
+            <img :src="album.poster" alt="">
+            <h4>{{album.title}}</h4>
+            <p>{{album.author}}</p>
+            <p>{{album.year}}</p>
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </div>
 
     <script src="js/script.js" charset="utf-8"></script>
   </body>
