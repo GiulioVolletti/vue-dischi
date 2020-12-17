@@ -14,17 +14,19 @@ var spotApp = new Vue (
       albumArray: [],
       genreArray: [],
       selected: "" ,
+      conditionAlbum: true,
     },
     methods:{
       valueChange: function (){
         console.log(this.selected);
-
+        this.conditionAlbum = false
         console.log( "here", this.selected);
 
       },
     },
     mounted: function ()  {
       console.log("hello world");
+
       // Attraverso una chiamata ajax all’API di boolean
       // https://flynn.boolean.careers/exercises/api/array/music
       // avremo a disposizione una decina di dischi musicali.
