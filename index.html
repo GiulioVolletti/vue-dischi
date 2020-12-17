@@ -8,15 +8,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js" integrity="sha512-DZqqY3PiOvTP9HkjIWgjO6ouCbq+dxqWoJZ/Q+zPYNHmlnI2dQnbJ5bxAHpAMw+LXRm4D72EIRXzvcHQtE8/VQ==" crossorigin="anonymous"></script>
     <!-- my css -->
     <link rel="stylesheet" href="css/style.css">
-    <title></title>
+    <title>Vue Dischi</title>
   </head>
   <body>
     <header>
       <img src="https://www.scdn.co/i/_global/twitter_card-default.jpg" alt="spotify">
+      
+
     </header>
     <main class="app_container">
       <div class="container">
-        <div v-for="album in albumArray" class="albums">
+        <div v-if="albumArray.length != 0" v-for="album in albumArray" class="albums">
           <img :src="album.poster" alt="">
           <h4>{{album.title}}</h4>
           <p>{{album.author}}</p>
